@@ -1,0 +1,18 @@
+@startuml
+package "Controller Layer" {
+    [DemoController] <<Controller>>
+    [DemoController] --> [DemoService]
+}
+
+package "Service Layer" {
+    [DemoService] <<Service>>
+    [DemoService] --> [DemoRepository]
+}
+
+package "Repository Layer" {
+    [DemoRepository] <<Repository>>
+}
+
+[DemoController] --> [DemoDto]
+[DemoService] --> [DemoDto]
+@enduml
